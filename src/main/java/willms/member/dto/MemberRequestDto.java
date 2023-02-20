@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import willms.member.entity.Authority;
 import willms.member.entity.Member;
 
 @Getter
@@ -22,7 +23,7 @@ public class MemberRequestDto {
                 .email(email)
                 .password(passwordEncoder.encode(password))
                 .nickname(nickname)
-                //.authority(Authority.ROLE_USER)
+                .authority(Authority.ROLE_USER)
                 .build();
     }
 
